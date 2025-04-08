@@ -132,12 +132,20 @@ nav.container {
 nav img {
     width: 3.5rem;
     height: 3.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+nav:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    cursor: pointer;
 }
 
 nav .title {
     position: absolute;
-    left: 52%;
+    left: 58%;
     transform: translateX(-50%);
+    padding: 0 1rem;
     font: 700 1.2rem var(--title-font);
 }
 
@@ -187,8 +195,6 @@ nav.show .menu {
     place-content: center;
     opacity: 1;
     visibility: visible;
-
-    
     background: var(--body-color);
 
     height: 100vh;
@@ -204,15 +210,33 @@ nav.show .menu {
 
 nav.show .menu::before {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    top: 20px;     /* desce */
+    left: 20px;    /* vai pra direita */
     background-image: url('./img/mascote.png');
-    background-size: 100px auto;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
     opacity: 0.5;
     z-index: 0;
-}
+  }
+  
+  nav.show .menu::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: 20px;   /* sobe */
+    right: 20px;    /* vai pra esquerda */
+    background-image: url('./img/mascoteInvert.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 0;
+  }
 
 nav.show .menu ul {
     display: grid;
@@ -321,14 +345,22 @@ nav.show div.icon-menu {
 .center-images {
     display: flex;
     border-radius: 16px;
-    border: 4px solid var(--text-color) ;
+    border: 6px solid var(--text-color) ;
     z-index: 1;
 }
 
 .center-images img {
     width: 5rem;
     height: auto;
-    border-radius: 10px;
+    z-index: 0;
+}
+
+.cerveja {
+    border-radius: 12px 0 0 12px ;
+}
+
+.pimenta {
+    border-radius: 0 12px 12px 0;
 }
 
 .geral, .pimenta, .cerveja {
@@ -445,11 +477,11 @@ nav.show div.icon-menu {
     margin-bottom: 1.5rem;
 }
 
-#contact .icon-whatsapp {
+.phone  {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #25D366;
+    background-color: var(--text-color);
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -512,6 +544,35 @@ footer a {
     margin: 0;
 }
 
+/* back-to-top */
+.back-to-top {
+    background:  var(--text-color);
+    color: var(--base-color);
+
+    position: fixed;
+
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.5rem;
+
+    clip-path: circle();
+
+    font-size: 1.5rem;
+    line-height: 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.3s;
+    transform: translateY(100%);
+}
+
+.back-to-top.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* RESPONSIVO */
 @media (min-width: 767px) {
     nav.container,
@@ -536,6 +597,7 @@ footer a {
 
     nav .title {
         font-size: 1.5rem;
+        left: 50%;
     }
 
     nav ul li a {
@@ -584,7 +646,7 @@ footer a {
     .contact-form input,
     .contact-form textarea,
     .contact-form button {
-        width: 25rem;
+        width: 30.3rem;
     }
     
     .contact-form input,
