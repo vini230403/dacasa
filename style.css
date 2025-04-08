@@ -208,7 +208,7 @@ nav.show .menu::before {
     position: absolute;
     inset: 0;
     background-image: url('./img/mascote.png');
-    background-size: 250px auto;
+    background-size: 200px auto;
     background-repeat: no-repeat;
     background-position: bottom;
     opacity: 0.5;
