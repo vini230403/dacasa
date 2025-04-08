@@ -209,7 +209,7 @@ nav.show .menu::before {
     background-image: url('./img/mascote.png');
     background-size: 100px auto;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center bottom 5% ;
     opacity: 0.5;
     z-index: 0;
 }
