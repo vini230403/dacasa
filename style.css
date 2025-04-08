@@ -482,7 +482,7 @@ nav.show div.icon-menu {
     align-items: center;
     gap: 0.5rem;
     background-color: var(--text-color);
-    color: white;
+    color: var(--base-color);
     font-weight: bold;
     text-decoration: none;
     padding: .5rem 1rem;
@@ -493,15 +493,15 @@ nav.show div.icon-menu {
     margin-bottom: 1.5rem;
 }
 
-#contact .icon-whatsapp::before {
+.phone::before {
     font-size: 1.7rem;
     display: inline-block;
     margin-top: .2rem;
     margin-right: 0.5rem;
 }
   
-#contact  .icon-whatsapp:hover {
-    background-color: #1ebc5b;
+.phone:hover {
+    background-color: #d14034;
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
