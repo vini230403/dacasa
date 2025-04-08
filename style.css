@@ -184,8 +184,7 @@ nav .menu {
 
 nav.show .menu {
     display: grid;
-    place-content: start center;
-    padding-top: 12rem;
+    place-content: center;
     opacity: 1;
     visibility: visible;
 
@@ -208,7 +207,7 @@ nav.show .menu::before {
     position: absolute;
     inset: 0;
     background-image: url('./img/mascote.png');
-    background-size: 200px auto;
+    background-size: 100px auto;
     background-repeat: no-repeat;
     background-position: bottom;
     opacity: 0.5;
