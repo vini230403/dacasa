@@ -633,6 +633,10 @@ footer a {
         font-size: 2rem;
     }
 
+    nav ul li a {
+        font-size: 1.3rem;
+    }
+
     .center h2 {
         font-size: 1.5rem;
         padding: 0 17rem;

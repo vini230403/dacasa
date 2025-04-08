@@ -34,19 +34,20 @@ const swiper = new Swiper('.swiper', {
 })
 
 /* scrollRevel */
-const scrollReveal = ScrollReveal({
-    origin: 'top',
-    distance: '30px',
-    duration: 700,
-    reset: true,
-    viewFactor: 0.6 
-})
+const isMobile = window.innerWidth <= 768;
 
-scrollReveal.reveal(
-    `#home .subtitle, #home .home,
-    #home .center, #products .subtitle,
-    #products .produtos li, #about .subtitle,
-    #about .text, #contact .subtitle, 
-    #contact .contact-section, #contact .whatsapp` 
-    , {interval: 100}
-)
+ScrollReveal().reveal(
+  `#home .subtitle, #home .home,
+   #home .center, #products .subtitle,
+   #products .produtos li, #about .subtitle,
+   #about .text, #contact .subtitle, 
+   #contact .contact-section, #contact .whatsapp`, 
+  {
+    origin: 'top',
+    distance: '20px',
+    duration: 500,
+    reset: false,
+    viewFactor: isMobile ? 0.1 : 0.2,
+    interval: 100
+  }
+);
