@@ -184,7 +184,8 @@ nav .menu {
 
 nav.show .menu {
     display: grid;
-    place-content: center;
+    place-content: start center;
+    padding-top: 12rem;
     opacity: 1;
     visibility: visible;
 
@@ -207,7 +208,7 @@ nav.show .menu::before {
     position: absolute;
     inset: 0;
     background-image: url('./img/mascote.png');
-    background-size: 150px auto;
+    background-size: 250px auto;
     background-repeat: no-repeat;
     background-position: bottom;
     opacity: 0.5;
@@ -357,6 +358,10 @@ nav.show div.icon-menu {
   text-align: center;
 }
 
+.produtos .mascote {
+    display: none ;
+}    
+
 .produtos .grid li img {
   width: 100%;
   border-radius: 12px;
@@ -425,18 +430,49 @@ nav.show div.icon-menu {
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
   
 .contact-form button:hover {
     background-color: #a08c64;
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.whatsapp p,
-.whatsapp a {
+.whatsapp p {
     margin-top: 1.5rem;
     font-size: 1.5rem;
     color: var(--title-color);
+    margin-bottom: 1.5rem;
+}
+
+#contact .icon-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+#contact .icon-whatsapp::before {
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-top: .2rem;
+    margin-right: 0.5rem;
+}
+  
+#contact  .icon-whatsapp:hover {
+    background-color: #1ebc5b;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* FOOTER */    
@@ -449,6 +485,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 footer img {
@@ -517,6 +554,11 @@ footer a {
         width: 8rem;
     }
 
+    /* PRODUTOS */
+    .produtos .mascote {
+        display: none;
+    }
+
     /* ABOUT */
     #about .text {
         max-width: 800px;
@@ -535,12 +577,13 @@ footer a {
         gap: 2rem;
         align-items: center;
     }
-    
-    .contact-form {
-        max-width: 600px;
-        width: 100%;
-    }
 
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 25rem;
+    }
+    
     .contact-form input,
     .contact-form textarea,
     .contact-form button,
@@ -568,3 +611,88 @@ footer a {
     }
 
 }
+
+@media (min-width: 1200px) {
+    .section-background {
+        max-width: 1000px;
+        margin-top: 2rem;
+    }
+    
+    nav.container {
+        max-width: 1000px;
+    }
+
+    .subtitle {
+        font-size: 2.5rem;
+    }
+
+    nav .title {
+        font-size: 2rem;
+    }
+
+    .center h2 {
+        font-size: 1.5rem;
+        padding: 0 17rem;
+    }
+
+    .center-images img {
+        width: 10rem;
+    }
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav div.icon-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav img {
+        padding: 0;
+        left: 50%;
+    }
+
+    nav .title {
+        padding: 0;
+        left: 40%;
+    }
+
+    nav ul {
+        position: relative;
+        left: 80%;
+    }
+
+    .produtos .grid li.mascote {
+        display: block;
+    }
+
+    .produtos .grid li.mascote img {
+        border-radius: 0;
+        border: none;
+    }
+    
+    .mascote img {
+        opacity: 1;
+    }
+
+    footer {
+        padding: 0 16rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    nav.container {
+        max-width: 1200px;
+    }
+
+    footer {
+        padding: 0 20rem;
+    }
+} 
