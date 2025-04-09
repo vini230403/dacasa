@@ -374,6 +374,10 @@ nav.show div.icon-menu {
     text-align: center;
 }
 
+.produtos p {
+    padding: .1rem 0;
+}
+
 .produtos .grid {
   display: flex;
   flex-wrap: wrap;
@@ -403,6 +407,16 @@ nav.show div.icon-menu {
 .produtos .grid li h3,
 .produtos .grid li p {
   font-family: var(--subtile-font);
+}
+
+.produtos .desc,
+.produtos .sale {
+    display: none;
+}
+
+.produtos .information {
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 /* ABOUT */
@@ -571,6 +585,82 @@ footer a {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+/* MODAL PRODUTOS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+  
+.modal-content {
+    background: var(--body-color);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+  
+.modal-content img {
+    width: 100%;
+    border-radius: 8px;
+    border: 4px solid var(--text-color);
+    margin-bottom: 1rem;
+}
+  
+.icon-close {
+    color: var(--text-color);
+    position: absolute;
+    top: 0.5rem;
+    right: .5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#productModal .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#modalDescription{
+    margin-bottom: 0.5rem;
+}
+
+#modalSale {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--text-color);
+    color: var(--base-color);
+    font-weight: bold;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#modalSale::before {
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-top: .2rem;
+    margin-right: 0.5rem;
+}
+
+#modalSale:hover {
+    background-color: #d14034;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* RESPONSIVO */

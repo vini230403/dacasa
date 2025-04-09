@@ -17,6 +17,44 @@ for(const link of links) {
     })
 }
 
+
+/* Modal produtos */
+const modal = document.getElementById('productModal')
+const modalImg = document.getElementById('modalImage')
+const modalTitle = document.getElementById('modalTitle')
+const modalDescription = document.getElementById('modalDescription')
+const modalSale = document.getElementById('modalSale')
+
+
+document.querySelectorAll('.produtos img, .produtos .information').forEach(info => {
+  info.addEventListener('click', (e) => {
+    e.stopPropagation() 
+
+    const item = info.closest('li') 
+    const img = item.querySelector('img').src
+    const title = item.querySelector('h3').innerHTML
+    const desc = item.querySelector('.desc').innerText
+    const sale = item.querySelector('.sale').getAttribute('href')
+
+    modalImg.src = img
+    modalTitle.innerHTML = title
+    modalDescription.innerText = desc
+    modalSale.href = sale
+
+    modal.style.display = 'flex'
+  })
+})
+
+document.querySelectorAll('.icon-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.style.display = 'none'
+    })
+  })
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) modal.style.display = 'none'
+})
+
 /* Carrosel */
 const swiper = new Swiper('.swiper', {
     slidesPerView:1,
