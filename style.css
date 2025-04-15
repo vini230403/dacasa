@@ -221,7 +221,7 @@ nav.show .menu::before {
     background-position: center;
     opacity: 0.5;
     z-index: 0;
-  }
+}
   
   nav.show .menu::after {
     content: '';
@@ -236,7 +236,7 @@ nav.show .menu::before {
     background-position: center;
     opacity: 0.5;
     z-index: 0;
-  }
+}
 
 nav.show .menu ul {
     display: grid;
@@ -284,17 +284,24 @@ nav.show div.icon-menu {
 
 #home h1 {
     color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
 /* swiper */
-.swiper {
+.swiper, .swiper2 {
     width: 100%;
     height: auto;
     max-width: 600px;
     margin-top: -1rem;
 
-    border-radius: 8px;
-    border: 4px solid var(--text-color) ;
+    border-radius: 16px;
+    border: 6px solid var(--text-color) ;
+
+    overflow: hidden;
+}
+
+.swiper2 {
+    max-width: 80%;
 }
   
 .swiper-slide {
@@ -309,18 +316,18 @@ nav.show div.icon-menu {
     object-fit: cover;
 }
 
-.swiper-pagination {
+.swiper-pagination, .swiper-pagination2 {
     padding-top: 0rem;
     position: relative;
 }
 
-.swiper-pagination-bullet {
+.swiper-pagination-bullet, .swiper-pagination2-bullet {
     background-color: rgba(242, 80, 66, 0.3);
     opacity: 1;
     margin: 0 6px;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active, .swiper-pagination2-bullet-active {
     background-color: var(--text-color);
 }
 
@@ -354,11 +361,11 @@ nav.show div.icon-menu {
 }
 
 .cerveja {
-    border-radius: 12px 0 0 12px ;
+    border-radius: 10px 0 0 10px ;
 }
 
 .pimenta {
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 10px 10px 0;
 }
 
 .geral, .pimenta, .cerveja {
@@ -399,8 +406,8 @@ nav.show div.icon-menu {
 
 .produtos .grid li img {
   width: 100%;
-  border-radius: 12px;
-  border: 4px solid var(--text-color);
+  border-radius: 16px;
+  border: 6px solid var(--text-color);
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
@@ -429,30 +436,45 @@ nav.show div.icon-menu {
     font: 400 var(--subtitle-font-size) var(--subtile-font)
 }
 
-#about .image {
+#about .kitchen {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-#about img {
+#about .kitchen img {
     height: auto;
     border: 6px solid var(--text-color);
     border-radius: 16px;
+    margin-top: 1rem;
 }
 
-#about .image .subtitle {
+#about h3.subtitle {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
 }
 
 .cozinha1, .cozinha2 {
-    flex-grow: 1;
-    width: 100%;
-    height: 500px;
     margin-bottom: 1rem;
 }
 
+.ingredients.swiper2 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#about .ingredients img {
+    width: 100%;
+    height: auto;
+}
+
+#about video {
+    margin-top: 1rem;
+    width: 80%;
+    height: auto;
+    border-radius: 16px;
+    border: 6px solid var(--text-color);
+}
 
 /* CONTATO */
 #contact {
@@ -470,7 +492,7 @@ nav.show div.icon-menu {
 .contact-form {
     background-color: var(--base-color);
     padding: .5rem;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
@@ -482,6 +504,10 @@ nav.show div.icon-menu {
 .contact-form label {
     font-weight: bold;
     color: #333;
+    font-family: var(--subtile-font);
+}
+.contact-form button {
+    font-family: var(--subtile-font);
 }
   
 .contact-form input,
@@ -517,6 +543,10 @@ nav.show div.icon-menu {
     margin-bottom: 1.5rem;
 }
 
+.whatsapp p, .whatsapp a {
+    font-family: var(--subtile-font);
+}
+
 .phone  {
     display: inline-flex;
     align-items: center;
@@ -550,17 +580,28 @@ nav.show div.icon-menu {
 footer {
     margin-right: 1.5rem;
     width: 100%;
-    height: 6rem;
-    padding: 0 1rem;
+    height: 10rem;
+    padding: 0 .5rem;
     background: #8C7851;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1rem;
+}
+
+footer .left {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0 1.2rem 1.5rem;
+}
+
+footer p {
+    font-family: var(--subtile-font);
+    font-size: 1.1rem;
 }
 
 footer img {
-    margin-left: 1.5rem;
     width: 4rem;
     height: 4rem;
 }
@@ -569,10 +610,10 @@ footer a {
     color: #000000;
 }
 
-.footer-contact {
+footer .footer-contact {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin: 2rem 0 0 0;
 }
   
 .footer-contact ul {
@@ -581,7 +622,27 @@ footer a {
     gap: 0.5rem; 
     list-style: none;
     padding: 0;
-    margin: 0;
+}
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+}
+
+.icon-whatsapp::before {
+    content: "";
+    font-size: 1.2rem;
+}
+
+.icon-mail::before {
+    content: "";
+    font-size: 1.2rem;
+}
+
+.icon-map-pin::before {
+    content: "";
+    font-size: 1.2rem;
 }
 
 /* back-to-top */
@@ -626,7 +687,7 @@ footer a {
   
 .modal-content {
     background: var(--body-color);
-    border-radius: 10px;
+    border-radius: 16px;
     padding: 2rem;
     max-width: 400px;
     width: 90%;
@@ -636,8 +697,8 @@ footer a {
   
 .modal-content img {
     width: 100%;
-    border-radius: 8px;
-    border: 4px solid var(--text-color);
+    border-radius: 16px;
+    border: 6px solid var(--text-color);
     margin-bottom: 1rem;
 }
   
@@ -724,7 +785,8 @@ footer a {
     }
 
     /* HOME */
-    .swiper-pagination-bullet {
+    .swiper-pagination-bullet,
+    .swiper-pagination2-bullet {
         width: .8rem;
         height: .8rem;
     }
@@ -752,6 +814,28 @@ footer a {
     #about p {
         font-size: 1.1rem;
         padding: 0 5.5rem;
+    }
+
+    #about h3.subtitle {
+        font-size: 1.5rem;
+    }
+
+    #about .kitchen {
+        align-items: center;
+    }
+
+
+    #about .kitchen img {
+        width: 70%;
+        height: auto;
+    }
+
+    .ingredients.swiper2 {
+        max-width: 50%;
+    }
+
+    #about video {
+        width: 50%;
     }
 
     /* CONTACT */
@@ -857,17 +941,16 @@ footer a {
         left: 80%;
     }
 
-    #about .image {
-        align-items: center;
-    }
-
-    #about .image .subtitle {
+    #about h3.subtitle {
         font-size: 1.6rem;
     }
 
-    #about img {
-        width: 80%;
-        height: auto;
+    .ingredients.swiper2 {
+        max-width: 45%;
+    }
+
+    #about video {
+        width: 45%;
     }
 
     .produtos .grid li.mascote {

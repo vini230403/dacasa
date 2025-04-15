@@ -56,7 +56,7 @@ window.addEventListener('click', (e) => {
 })
 
 /* Carrosel */
-const swiper = new Swiper('.swiper', {
+const swiper1 = new Swiper('.swiper', {
     slidesPerView:1,
     loop: true,
     pagination: {
@@ -75,6 +75,25 @@ const swiper = new Swiper('.swiper', {
     keyboard: true,
 })
 
+const swiper2 = new Swiper('.swiper2', {
+  slidesPerView:1,
+  loop: true,
+  pagination: {
+      el: '.swiper-pagination2',
+      clickable: true
+  },
+  autoplay: {
+    delay: 3000, 
+    disableOnInteraction: false, 
+  },
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+  },
+  mousewheel: true,
+  keyboard: true,
+})
+
 /* scrollRevel */
 const isMobile = window.innerWidth <= 768;
 
@@ -82,8 +101,8 @@ ScrollReveal().reveal(
   `#home .subtitle, #home .home,
    #home .center, #products .subtitle,
    #products .produtos li, #about .subtitle,
-   #about .text, #contact .subtitle, 
-   #contact .contact-section, #contact .whatsapp`, 
+   #about .text, #about .kitchen, #about .ingredients, #about .preparation, 
+   #contact .subtitle, #contact .contact-section, #contact .whatsapp `, 
   {
     origin: 'top',
     distance: '20px',
@@ -112,7 +131,7 @@ function arrowUpWhenScroll() {
 
   // Se estiver sobrepondo o footer, sobe o botão
   if (overlap) {
-    backToTopButton.style.bottom = '8rem'
+    backToTopButton.style.bottom = '11rem'
   } else {
     backToTopButton.style.bottom = '1rem'
   }
