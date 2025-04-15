@@ -96,17 +96,26 @@ ScrollReveal().reveal(
 
 /* button back */
 const backToTopButton = document.querySelector('.back-to-top')
+const footer = document.querySelector('footer') // ou use a classe/id real do seu footer
 
 function arrowUpWhenScroll() {
+  const footerTop = footer.getBoundingClientRect().top + window.scrollY
+  const windowBottom = window.scrollY + window.innerHeight
+  const overlap = windowBottom > footerTop
 
-    if (window.scrollY >= 560) {
-        backToTopButton.classList.add('show')
-    } else {
-        backToTopButton.classList.remove('show')
-    }
+  // Mostra/esconde botão
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
 
+  // Se estiver sobrepondo o footer, sobe o botão
+  if (overlap) {
+    backToTopButton.style.bottom = '8rem'
+  } else {
+    backToTopButton.style.bottom = '1rem'
+  }
 }
 
-window.addEventListener('scroll', function() {
-    arrowUpWhenScroll()
-})
+window.addEventListener('scroll', arrowUpWhenScroll)
